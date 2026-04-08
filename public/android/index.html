@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>KINTA</title>
+    <meta
+      name="description"
+      content="KINTA helps you browse agricultural lease listings, compare tenant farmers, and send match requests from a mobile-first app."
+    />
+    <meta name="theme-color" content="#173c25" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="/android/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/android/icon.svg" />
+    <link rel="apple-touch-icon" href="/android/icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/android/app.css" />
+  </head>
+  <body>
+    <div class="android-shell">
+      <header class="android-topbar">
+        <a class="android-brand" href="/android/index.html">
+          <img class="android-brand-logo" src="/android/icon.svg" alt="KINTA app icon" />
+          <span>
+            <strong>KINTA</strong>
+            <small>Field access</small>
+          </span>
+        </a>
+        <button class="android-install hidden" type="button" data-install-app>
+          Install
+        </button>
+      </header>
+
+      <main class="android-main">
+        <section class="android-hero" id="home">
+          <p class="eyebrow">KINTA</p>
+          <h1>Use KINTA anywhere.</h1>
+          <p class="android-copy">
+            Browse lease-ready land, compare tenant farmers, and send match requests
+            from a mobile-first KINTA experience built on top of the current backend.
+          </p>
+          <div class="android-hero-actions">
+            <a class="android-button android-button-primary" href="#lands">Browse Land</a>
+            <a class="android-button android-button-secondary" href="#account">Account</a>
+          </div>
+          <p class="android-install-note" data-install-status aria-live="polite">
+            Install KINTA from your browser when it is ready.
+          </p>
+        </section>
+
+        <section class="android-panel" id="overview">
+          <div class="android-section-head">
+            <div>
+              <p class="eyebrow">Live Overview</p>
+              <h2>Marketplace pulse</h2>
+            </div>
+            <span class="android-pill" id="healthStatus">Connecting...</span>
+          </div>
+          <div class="android-stats" id="overviewGrid"></div>
+        </section>
+
+        <section class="android-panel" id="launcher">
+          <div class="android-section-head">
+            <div>
+              <p class="eyebrow">Quick Actions</p>
+              <h2>Move fast on mobile</h2>
+            </div>
+          </div>
+          <div class="android-shortcuts">
+            <a class="android-shortcut" href="#lands">
+              <strong>Land feed</strong>
+              <span>See lease-ready plots and open details right here.</span>
+            </a>
+            <a class="android-shortcut" href="#farmers">
+              <strong>Farmer feed</strong>
+              <span>Review available tenant profiles and fit signals.</span>
+            </a>
+            <a class="android-shortcut" href="#account">
+              <strong>Access</strong>
+              <span>Sign in so match requests fill in automatically.</span>
+            </a>
+            <a class="android-shortcut" href="#overview">
+              <strong>Live overview</strong>
+              <span>Jump to current marketplace activity and service health.</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="android-panel" id="lands">
+          <div class="android-section-head">
+            <div>
+              <p class="eyebrow">Land Listings</p>
+              <h2>Lease-ready acreage</h2>
+            </div>
+          </div>
+          <label class="android-field">
+            <span>Search by location, soil, crop, or best fit</span>
+            <input
+              id="landSearch"
+              type="search"
+              placeholder="Ex: Hyderabad, clay, rice, Tenant Farmer"
+            />
+          </label>
+          <div class="android-feed" id="landFeed"></div>
+        </section>
+
+        <section class="android-panel" id="farmers">
+          <div class="android-section-head">
+            <div>
+              <p class="eyebrow">Tenant Farmers</p>
+              <h2>Operators available now</h2>
+            </div>
+          </div>
+          <label class="android-field">
+            <span>Search by location, skill, availability, or interest</span>
+            <input
+              id="tenantSearch"
+              type="search"
+              placeholder="Ex: Telangana, paddy, Available"
+            />
+          </label>
+          <div class="android-feed" id="tenantFeed"></div>
+        </section>
+
+        <section class="android-panel" id="account">
+          <div class="android-section-head">
+            <div>
+              <p class="eyebrow">Account</p>
+              <h2>Use your KINTA access</h2>
+            </div>
+          </div>
+          <div class="android-account-grid">
+            <article class="android-card" id="sessionCard">
+              <h3>Loading session</h3>
+              <p class="android-copy">Checking whether you are already signed in.</p>
+            </article>
+
+            <article class="android-card">
+              <div class="android-card-head">
+                <h3>Sign in</h3>
+                <button class="android-link-button" id="logoutButton" type="button">
+                  Logout
+                </button>
+              </div>
+              <form class="android-form" id="loginForm">
+                <label class="android-field">
+                  <span>Email</span>
+                  <input type="email" name="email" value="landowner@kinta.in" required />
+                </label>
+                <label class="android-field">
+                  <span>Password</span>
+                  <input type="password" name="password" value="kinta123" required />
+                </label>
+                <button class="android-button android-button-primary" type="submit">
+                  Sign In
+                </button>
+                <p class="android-form-status" id="loginStatus" aria-live="polite"></p>
+              </form>
+            </article>
+
+            <article class="android-card">
+              <h3>Create account</h3>
+              <form class="android-form" id="registerForm">
+                <label class="android-field">
+                  <span>Name</span>
+                  <input type="text" name="name" required />
+                </label>
+                <label class="android-field">
+                  <span>Email</span>
+                  <input type="email" name="email" required />
+                </label>
+                <label class="android-field">
+                  <span>Phone</span>
+                  <input type="tel" name="phone" required />
+                </label>
+                <label class="android-field">
+                  <span>City</span>
+                  <input type="text" name="city" required />
+                </label>
+                <label class="android-field">
+                  <span>Role</span>
+                  <select name="role" required>
+                    <option value="">Select role</option>
+                    <option value="Landowner">Landowner</option>
+                    <option value="Tenant Farmer">Tenant Farmer</option>
+                    <option value="Urban Farmer">Urban Farmer</option>
+                    <option value="Agri Partner">Agri Partner</option>
+                  </select>
+                </label>
+                <label class="android-field">
+                  <span>Password</span>
+                  <input type="password" name="password" required />
+                </label>
+                <button class="android-button android-button-secondary" type="submit">
+                  Create Account
+                </button>
+                <p class="android-form-status" id="registerStatus" aria-live="polite"></p>
+              </form>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <nav class="android-tabbar" aria-label="App navigation">
+        <a href="#home">Home</a>
+        <a href="#lands">Land</a>
+        <a href="#farmers">Farmers</a>
+        <a href="#account">Account</a>
+      </nav>
+    </div>
+
+    <script src="/android/pwa.js"></script>
+    <script src="/android/app.js"></script>
+  </body>
+</html>

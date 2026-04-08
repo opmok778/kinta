@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KINTA | Smart Agricultural Land Leasing Marketplace</title>
+    <meta
+      name="description"
+      content="KINTA helps landowners and tenant farmers discover verified agricultural lease opportunities with trust, transparency, and data-backed farm intelligence."
+    />
+    <meta name="theme-color" content="#1e5937" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="/">
+          <img class="brand-logo" src="/assets/kinta-mark.svg" alt="KINTA logo" />
+          <span class="brand-copy">
+            <strong>KINTA</strong>
+            <small>Verified Agri Leasing</small>
+          </span>
+        </a>
+        <nav class="site-nav">
+          <a href="/">Home</a>
+          <a href="/marketplace.html">Marketplace</a>
+          <a href="/account.html">Accounts</a>
+          <a href="/admin.html">Admin</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero-section">
+          <div class="hero-copy-block">
+            <p class="eyebrow">India's structured farmland leasing layer</p>
+            <h1>Lease land, find farmers, and manage agricultural matches with confidence.</h1>
+            <p class="hero-description">
+              KINTA brings together verified land listings, farmer profiles, match requests,
+              and operational oversight so the land-leasing ecosystem can work like a real marketplace.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="/marketplace.html">Explore Marketplace</a>
+              <a class="button button-secondary" href="/account.html">Create Account</a>
+            </div>
+            <div class="stats-grid" id="overviewMetrics"></div>
+          </div>
+
+          <aside class="hero-surface">
+            <div class="surface-topline">
+              <span class="soft-pill">Live leasing network</span>
+              <span class="success-pill">Verified profiles</span>
+            </div>
+            <div class="surface-stack">
+              <article class="surface-note">
+                <strong>Land discovery</strong>
+                <span>Search verified acreage by location, irrigation, soil quality, and farmer fit.</span>
+              </article>
+              <article class="surface-note">
+                <strong>Farmer discovery</strong>
+                <span>Review available tenant farmers with experience, specialization, and lease intent.</span>
+              </article>
+              <article class="surface-note">
+                <strong>Match workflow</strong>
+                <span>Move from browsing to structured matchmaking through dedicated land and tenant pages.</span>
+              </article>
+            </div>
+          </aside>
+        </section>
+
+        <section class="content-section">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Why KINTA</p>
+              <h2>A professional platform for a market that has stayed informal for too long.</h2>
+            </div>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>For Landowners</h3>
+              <p>Evaluate tenant farmers, compare demand, and send better-qualified land opportunities into the market.</p>
+            </article>
+            <article class="feature-card">
+              <h3>For Tenant Farmers</h3>
+              <p>Discover verified farmland, inspect soil and irrigation signals, and request fit-based matches.</p>
+            </article>
+            <article class="feature-card">
+              <h3>For Operators</h3>
+              <p>Manage inquiries, role accounts, inventory, and match requests from a clean operations dashboard.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-head split-head">
+            <div>
+              <p class="eyebrow">Featured Land</p>
+              <h2>Recent lease-ready opportunities.</h2>
+            </div>
+            <a class="text-link" href="/marketplace.html">View all land listings</a>
+          </div>
+          <div class="card-grid" id="featuredLandGrid"></div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-head split-head">
+            <div>
+              <p class="eyebrow">Featured Farmers</p>
+              <h2>Trusted operators currently available.</h2>
+            </div>
+            <a class="text-link" href="/marketplace.html#tenant-market">View all tenant profiles</a>
+          </div>
+          <div class="card-grid" id="featuredTenantGrid"></div>
+        </section>
+
+        <section class="cta-band">
+          <div>
+            <p class="eyebrow">Ready To Start</p>
+            <h2>Use the marketplace to browse, compare, and match.</h2>
+          </div>
+          <div class="cta-actions">
+            <a class="button button-primary" href="/marketplace.html">Open Marketplace</a>
+            <a class="button button-secondary" href="/account.html">Sign In Or Register</a>
+          </div>
+        </section>
+      </main>
+      <footer class="site-footer">
+        <p>KINTA is building a trusted agricultural leasing layer for landowners, tenant farmers, and agri operators.</p>
+      </footer>
+    </div>
+
+    <script src="/landing.js"></script>
+  </body>
+</html>

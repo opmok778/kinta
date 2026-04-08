@@ -1,0 +1,63 @@
+{
+  "name": "KINTA",
+  "short_name": "KINTA",
+  "description": "Mobile-first KINTA experience for browsing agricultural lease listings and sending match requests.",
+  "start_url": "/android/index.html",
+  "scope": "/android/",
+  "display": "standalone",
+  "background_color": "#0d1b15",
+  "theme_color": "#173c25",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/android/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/android/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Land Listings",
+      "short_name": "Land",
+      "url": "/android/index.html#lands",
+      "icons": [
+        {
+          "src": "/android/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Tenant Farmers",
+      "short_name": "Farmers",
+      "url": "/android/index.html#farmers",
+      "icons": [
+        {
+          "src": "/android/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Account",
+      "short_name": "Account",
+      "url": "/android/index.html#account",
+      "icons": [
+        {
+          "src": "/android/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}

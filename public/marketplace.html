@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KINTA Marketplace | Verified Land And Tenant Profiles</title>
+    <meta name="theme-color" content="#1e5937" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="/">
+          <img class="brand-logo" src="/assets/kinta-mark.svg" alt="KINTA logo" />
+          <span class="brand-copy">
+            <strong>KINTA</strong>
+            <small>Marketplace</small>
+          </span>
+        </a>
+        <nav class="site-nav">
+          <a href="/">Home</a>
+          <a href="/marketplace.html">Marketplace</a>
+          <a href="/account.html">Accounts</a>
+          <a href="/admin.html">Admin</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <p class="eyebrow">Marketplace</p>
+          <h1>Browse verified land and tenant farmers in one place.</h1>
+          <p class="hero-description">
+            Filter by location, suitability, and availability, then open detailed pages to send structured match requests.
+          </p>
+        </section>
+
+        <section class="content-section" id="land-market">
+          <div class="section-head split-head">
+            <div>
+              <p class="eyebrow">Land Listings</p>
+              <h2>Verified farmland open for leasing.</h2>
+            </div>
+            <form class="filter-bar" id="landFilterForm">
+              <input type="text" name="location" placeholder="Search location" />
+              <select name="best_for">
+                <option value="">All user types</option>
+                <option value="Tenant Farmer">Tenant Farmer</option>
+                <option value="Urban Farmer">Urban Farmer</option>
+                <option value="Landowner">Landowner</option>
+              </select>
+              <button class="button button-secondary" type="submit">Apply</button>
+            </form>
+          </div>
+          <div class="card-grid" id="landGrid"></div>
+        </section>
+
+        <section class="content-section" id="tenant-market">
+          <div class="section-head split-head">
+            <div>
+              <p class="eyebrow">Tenant Farmers</p>
+              <h2>Available farmers seeking lease opportunities.</h2>
+            </div>
+            <form class="filter-bar" id="tenantFilterForm">
+              <input type="text" name="location" placeholder="Search tenant base location" />
+              <select name="availability">
+                <option value="">Any availability</option>
+                <option value="Available">Available</option>
+                <option value="Interviewing">Interviewing</option>
+              </select>
+              <button class="button button-secondary" type="submit">Apply</button>
+            </form>
+          </div>
+          <div class="card-grid" id="tenantGrid"></div>
+        </section>
+      </main>
+      <footer class="site-footer">
+        <p>Use KINTA detail pages to move from browsing to structured land and farmer matching.</p>
+      </footer>
+    </div>
+
+    <script src="/marketplace.js"></script>
+  </body>
+</html>

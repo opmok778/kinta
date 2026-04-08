@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">KINTA Mark</title>
+  <desc id="desc">Stylized agricultural brand mark for KINTA.</desc>
+  <defs>
+    <linearGradient id="leaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e5937" />
+      <stop offset="100%" stop-color="#bb7a39" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="32" fill="#fff8ef" />
+  <path d="M34 96V30h14v25l23-25h18L62 59l30 37H74L51 68l-3 3v25H34Z" fill="#173c25" />
+  <path d="M92 25c-3 14-12 26-28 34 4-16 13-28 28-34Z" fill="url(#leaf)" />
+</svg>

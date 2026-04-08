@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>KINTA Detail</title>
+    <meta
+      name="description"
+      content="KINTA detail screen for land listings, tenant profiles, and match requests."
+    />
+    <meta name="theme-color" content="#173c25" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="manifest" href="/android/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/android/icon.svg" />
+    <link rel="apple-touch-icon" href="/android/icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/android/app.css" />
+  </head>
+  <body>
+    <div class="android-shell">
+      <header class="android-topbar">
+        <a class="android-brand" href="/android/index.html">
+          <img class="android-brand-logo" src="/android/icon.svg" alt="KINTA app icon" />
+          <span>
+            <strong>KINTA</strong>
+            <small>Detail view</small>
+          </span>
+        </a>
+        <a class="android-install android-install-link" href="/android/index.html">
+          Back
+        </a>
+      </header>
+
+      <main class="android-main android-detail-main">
+        <section class="android-panel">
+          <article class="android-card android-detail-card" id="detailCard">
+            <h1>Loading detail</h1>
+            <p class="android-copy">Fetching current record information.</p>
+          </article>
+        </section>
+
+        <section class="android-panel" id="match">
+          <div class="android-section-head">
+            <div>
+              <p class="eyebrow">Match Request</p>
+              <h2>Send a structured request</h2>
+            </div>
+          </div>
+          <article class="android-card">
+            <p class="android-copy" id="sessionNote">
+              Sign in from home if you want auto-filled request details.
+            </p>
+            <form class="android-form" id="matchForm">
+              <label class="android-field">
+                <span id="counterpartLabel">Select counterpart</span>
+                <select name="counterpart_id" id="counterpartSelect" required></select>
+              </label>
+              <label class="android-field">
+                <span>Name</span>
+                <input type="text" name="requester_name" id="requesterName" required />
+              </label>
+              <label class="android-field">
+                <span>Phone</span>
+                <input type="tel" name="requester_phone" id="requesterPhone" required />
+              </label>
+              <label class="android-field">
+                <span>Email</span>
+                <input type="email" name="requester_email" id="requesterEmail" />
+              </label>
+              <label class="android-field">
+                <span>Role</span>
+                <select name="requester_role" id="requesterRole" required>
+                  <option value="">Select role</option>
+                  <option value="Landowner">Landowner</option>
+                  <option value="Tenant Farmer">Tenant Farmer</option>
+                  <option value="Urban Farmer">Urban Farmer</option>
+                  <option value="Agri Partner">Agri Partner</option>
+                </select>
+              </label>
+              <label class="android-field">
+                <span>Notes</span>
+                <textarea
+                  name="notes"
+                  rows="4"
+                  placeholder="Describe the fit, timing, or lease structure you are exploring"
+                ></textarea>
+              </label>
+              <button class="android-button android-button-primary" type="submit">
+                Submit Match Request
+              </button>
+              <p class="android-form-status" id="matchStatus" aria-live="polite"></p>
+            </form>
+          </article>
+        </section>
+
+        <section class="android-panel">
+          <div class="android-section-head">
+            <div>
+              <p class="eyebrow">Recommended</p>
+              <h2 id="relatedHeading">Suggested matches</h2>
+            </div>
+          </div>
+          <div class="android-feed" id="relatedFeed"></div>
+        </section>
+
+        <section class="android-panel">
+          <div class="android-section-head">
+            <div>
+              <p class="eyebrow">Activity</p>
+              <h2>Recent request history</h2>
+            </div>
+          </div>
+          <div class="android-feed" id="historyFeed"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/android/pwa.js"></script>
+    <script src="/android/detail.js"></script>
+  </body>
+</html>

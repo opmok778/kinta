@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">KINTA Maskable Icon</title>
+  <desc id="desc">Maskable app icon for the KINTA app.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#173c25" />
+      <stop offset="100%" stop-color="#0d1b15" />
+    </linearGradient>
+    <linearGradient id="leaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e5937" />
+      <stop offset="100%" stop-color="#cb8a3e" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="url(#bg)" />
+  <rect x="96" y="96" width="320" height="320" rx="88" fill="#fff8ef" />
+  <path d="M186 386V151h41v75l66-75h58L273 240l86 146h-59l-69-96-4 6v90h-41Z" fill="#173c25" />
+  <path d="M354 139c-10 39-38 73-81 96 11-44 38-78 81-96Z" fill="url(#leaf)" />
+</svg>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KINTA | Land Detail</title>
+    <meta name="theme-color" content="#1e5937" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-detail-type="land">
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="/">
+          <img class="brand-logo" src="/assets/kinta-mark.svg" alt="KINTA logo" />
+          <span class="brand-copy">
+            <strong>KINTA</strong>
+            <small>Land Detail</small>
+          </span>
+        </a>
+        <nav class="site-nav">
+          <a href="/">Home</a>
+          <a href="/marketplace.html">Marketplace</a>
+          <a href="/account.html">Accounts</a>
+        </nav>
+      </header>
+
+      <main class="detail-main">
+        <section class="detail-grid">
+          <article class="detail-content" id="detailContent"></article>
+
+          <aside class="detail-panel" id="match">
+            <p class="eyebrow">Request Match</p>
+            <h2>Connect this land with a tenant farmer.</h2>
+            <p class="muted-note" id="detailSessionNote"></p>
+            <form class="stack-form" id="matchForm">
+              <label>
+                Select tenant farmer
+                <select name="counterpart_id" id="counterpartSelect" required></select>
+              </label>
+              <label>Name<input type="text" name="requester_name" id="requesterName" required /></label>
+              <label>Phone<input type="tel" name="requester_phone" id="requesterPhone" required /></label>
+              <label>Email<input type="email" name="requester_email" id="requesterEmail" /></label>
+              <label>
+                Role
+                <select name="requester_role" id="requesterRole" required>
+                  <option value="">Select role</option>
+                  <option value="Landowner">Landowner</option>
+                  <option value="Tenant Farmer">Tenant Farmer</option>
+                  <option value="Urban Farmer">Urban Farmer</option>
+                  <option value="Agri Partner">Agri Partner</option>
+                </select>
+              </label>
+              <label>Notes<textarea name="notes" rows="4" placeholder="Describe the type of operator or support you need"></textarea></label>
+              <button class="button button-primary" type="submit">Submit Match Request</button>
+              <p class="form-status" id="matchStatus" aria-live="polite"></p>
+            </form>
+          </aside>
+        </section>
+
+        <section class="content-section">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Recommended Tenants</p>
+              <h2>Shortlisted operators for this land.</h2>
+            </div>
+          </div>
+          <div class="detail-related-grid" id="relatedGrid"></div>
+          <div id="historyList"></div>
+        </section>
+      </main>
+      <footer class="site-footer">
+        <p>Use this page to evaluate land quality and submit a structured farmer match request.</p>
+      </footer>
+    </div>
+
+    <script src="/details.js"></script>
+  </body>
+</html>

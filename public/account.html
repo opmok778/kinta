@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KINTA Accounts | User Access</title>
+    <meta name="theme-color" content="#1e5937" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="/">
+          <img class="brand-logo" src="/assets/kinta-mark.svg" alt="KINTA logo" />
+          <span class="brand-copy">
+            <strong>KINTA</strong>
+            <small>User Access</small>
+          </span>
+        </a>
+        <nav class="site-nav">
+          <a href="/">Home</a>
+          <a href="/marketplace.html">Marketplace</a>
+          <a href="/account.html">Accounts</a>
+          <a href="/admin.html">Admin</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <p class="eyebrow">Role Accounts</p>
+          <h1>Create or sign in to a KINTA user account.</h1>
+          <p class="hero-description">
+            Landowners, tenant farmers, urban growers, and partners can sign in to make match requests easier and more structured.
+          </p>
+        </section>
+
+        <section class="content-section">
+          <div class="auth-grid">
+            <section class="feature-card">
+              <h3>Demo accounts</h3>
+              <p><strong>Landowner:</strong> landowner@kinta.in / kinta123</p>
+              <p><strong>Tenant:</strong> tenant@kinta.in / kinta123</p>
+              <p><strong>Partner:</strong> partner@kinta.in / kinta123</p>
+              <p>After signing in, detail pages will prefill your match request information automatically.</p>
+            </section>
+
+            <section class="feature-card" id="userSessionCard"></section>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <div class="auth-grid">
+            <section class="panel-card">
+              <p class="eyebrow">Register</p>
+              <h2>Create A Role Account</h2>
+              <form id="userRegisterForm" class="stack-form">
+                <label>Name<input type="text" name="name" required /></label>
+                <label>Email<input type="email" name="email" required /></label>
+                <label>Phone<input type="tel" name="phone" required /></label>
+                <label>City<input type="text" name="city" required /></label>
+                <label>
+                  Role
+                  <select name="role" required>
+                    <option value="">Select role</option>
+                    <option value="Landowner">Landowner</option>
+                    <option value="Tenant Farmer">Tenant Farmer</option>
+                    <option value="Urban Farmer">Urban Farmer</option>
+                    <option value="Agri Partner">Agri Partner</option>
+                  </select>
+                </label>
+                <label>Password<input type="password" name="password" required /></label>
+                <button class="button button-primary" type="submit">Create Account</button>
+                <p class="form-status" id="registerStatus" aria-live="polite"></p>
+              </form>
+            </section>
+
+            <section class="panel-card">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow">Sign In</p>
+                  <h2>Use Existing Access</h2>
+                </div>
+                <button class="button button-secondary button-small" id="userLogoutButton" type="button">Logout</button>
+              </div>
+              <form id="userLoginForm" class="stack-form">
+                <label>Email<input type="email" name="email" value="landowner@kinta.in" required /></label>
+                <label>Password<input type="password" name="password" value="kinta123" required /></label>
+                <button class="button button-primary" type="submit">Sign In</button>
+                <p class="form-status" id="userLoginStatus" aria-live="polite"></p>
+              </form>
+            </section>
+          </div>
+        </section>
+      </main>
+      <footer class="site-footer">
+        <p>Role accounts help streamline match requests across landowners, tenant farmers, urban growers, and agri partners.</p>
+      </footer>
+    </div>
+
+    <script src="/account.js"></script>
+  </body>
+</html>

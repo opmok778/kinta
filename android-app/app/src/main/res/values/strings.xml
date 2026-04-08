@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KINTA</string>
+    <string name="reload">Reload</string>
+    <string name="server_settings_title">Server URL</string>
+    <string name="server_settings_help">Point this app at the KINTA mobile page. The default address works in the Android emulator when your Python server is running on your computer.</string>
+    <string name="server_settings_label">KINTA mobile URL</string>
+    <string name="server_settings_hint">http://10.0.2.2:3000/android/index.html</string>
+    <string name="server_settings_examples">Examples:\nEmulator: http://10.0.2.2:3000/android/index.html\nPhone on same Wi-Fi: http://192.168.1.10:3000/android/index.html\nHosted: https://your-domain.example/android/index.html</string>
+    <string name="save_server_url">Save URL</string>
+    <string name="open_kinta">Save and Open App</string>
+    <string name="server_url_saved">Server URL saved</string>
+    <string name="page_load_failed">Could not load KINTA. Check the server URL in settings.</string>
+    <string name="no_app_available">No app is available to open that link.</string>
+    <string name="connection_help_title">KINTA could not connect</string>
+    <string name="open_server_settings">Open Server Settings</string>
+    <string name="retry_load">Retry</string>
+    <string name="connection_help_physical_device">This looks like a physical device, but the saved URL uses the Android emulator address.</string>
+    <string name="connection_help_network_error">KINTA could not open the saved URL.</string>
+    <string name="connection_help_use_url">URL: %1$s</string>
+    <string name="connection_help_physical_device_tip">Use a reachable IP address for your computer on the same network, or use a hosted URL, then reopen KINTA.</string>
+    <string name="connection_help_network_error_tip">Make sure the server is running and that this device can reach that address, then try again.</string>
+</resources>

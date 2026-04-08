@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="kinta_background">#0D1B15</color>
+    <color name="kinta_primary">#1D5A37</color>
+    <color name="kinta_primary_dark">#12231C</color>
+    <color name="kinta_surface">#F6F0E5</color>
+    <color name="kinta_accent">#CB8A3E</color>
+    <color name="kinta_text">#14291F</color>
+    <color name="kinta_text_secondary">#5E6E63</color>
+</resources>

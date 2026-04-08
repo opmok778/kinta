@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KINTA Admin | Operations Dashboard</title>
+    <meta name="theme-color" content="#1e5937" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="/">
+          <img class="brand-logo" src="/assets/kinta-mark.svg" alt="KINTA logo" />
+          <span class="brand-copy">
+            <strong>KINTA</strong>
+            <small>Admin Console</small>
+          </span>
+        </a>
+        <nav class="site-nav">
+          <a href="/">Home</a>
+          <a href="/marketplace.html">Marketplace</a>
+          <a href="/account.html">Accounts</a>
+          <a href="/admin.html">Admin</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <p class="eyebrow">Admin</p>
+          <h1>Marketplace operations dashboard.</h1>
+          <p class="hero-description">
+            Manage listings, farmers, user accounts, and match activity from a dedicated back-office workspace.
+          </p>
+        </section>
+
+        <section class="content-section">
+          <div class="dashboard-layout">
+            <section class="panel-card">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow">Admin Login</p>
+                  <h2>Secure Access</h2>
+                </div>
+                <button class="button button-secondary button-small" id="logoutButton" type="button">Logout</button>
+              </div>
+              <form id="loginForm" class="stack-form">
+                <label>Email<input type="email" name="email" value="admin@kinta.in" required /></label>
+                <label>Password<input type="password" name="password" value="kinta123" required /></label>
+                <button class="button button-primary" type="submit">Login</button>
+                <p class="form-status" id="loginStatus" aria-live="polite"></p>
+              </form>
+            </section>
+
+            <section class="panel-card hidden" id="dashboardPanel">
+              <div class="dashboard-summary" id="dashboardSummary"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="content-section hidden" id="adminWorkspace">
+          <div class="dashboard-grid">
+            <section class="panel-card">
+              <div class="panel-head">
+                <h2 id="landFormTitle">Add Land Listing</h2>
+              </div>
+              <form id="landAdminForm" class="stack-form">
+                <label>Title<input type="text" name="title" required /></label>
+                <label>Location<input type="text" name="location" required /></label>
+                <label>Acres<input type="number" step="0.1" name="acres" required /></label>
+                <label>Soil<input type="text" name="soil" required /></label>
+                <label>Irrigation<input type="text" name="irrigation" required /></label>
+                <label>Price per acre<input type="number" name="price" required /></label>
+                <label>Trust score<input type="number" min="1" max="100" name="trust_score" required /></label>
+                <label>Crops<input type="text" name="crops" required /></label>
+                <label>Best for<input type="text" name="best_for" required /></label>
+                <label>Summary<textarea name="summary" rows="4" required></textarea></label>
+                <div class="form-actions">
+                  <button class="button button-primary" id="landAdminSubmit" type="submit">Add Listing</button>
+                  <button class="button button-secondary hidden" id="landAdminCancel" type="button">Cancel Edit</button>
+                </div>
+                <p class="form-status" id="landAdminStatus" aria-live="polite"></p>
+              </form>
+            </section>
+
+            <section class="panel-card">
+              <div class="panel-head">
+                <h2 id="tenantFormTitle">Add Tenant Profile</h2>
+              </div>
+              <form id="tenantAdminForm" class="stack-form">
+                <label>Name<input type="text" name="name" required /></label>
+                <label>Base location<input type="text" name="base_location" required /></label>
+                <label>Specializations<input type="text" name="specializations" required /></label>
+                <label>Experience years<input type="number" name="experience_years" required /></label>
+                <label>Rating<input type="number" min="1" max="5" step="0.1" name="rating" required /></label>
+                <label>Lease interest<input type="text" name="lease_interest" required /></label>
+                <label>Availability<input type="text" name="availability" required /></label>
+                <label>Bio<textarea name="bio" rows="4" required></textarea></label>
+                <div class="form-actions">
+                  <button class="button button-primary" id="tenantAdminSubmit" type="submit">Add Tenant</button>
+                  <button class="button button-secondary hidden" id="tenantAdminCancel" type="button">Cancel Edit</button>
+                </div>
+                <p class="form-status" id="tenantAdminStatus" aria-live="polite"></p>
+              </form>
+            </section>
+
+            <section class="panel-card">
+              <h2>Manage Land</h2>
+              <div class="mini-list" id="manageLandList"></div>
+            </section>
+
+            <section class="panel-card">
+              <h2>Manage Tenants</h2>
+              <div class="mini-list" id="manageTenantList"></div>
+            </section>
+
+            <section class="panel-card">
+              <h2>Recent Matches</h2>
+              <div class="mini-list" id="matchList"></div>
+            </section>
+
+            <section class="panel-card">
+              <h2>Recent Inquiries</h2>
+              <div class="mini-list" id="inquiryList"></div>
+            </section>
+
+            <section class="panel-card full-span">
+              <h2>Latest User Accounts</h2>
+              <div class="mini-list" id="userList"></div>
+            </section>
+          </div>
+        </section>
+      </main>
+      <footer class="site-footer">
+        <p>The KINTA admin workspace is designed for operational visibility across listings, farmers, users, and match activity.</p>
+      </footer>
+    </div>
+
+    <script src="/admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+kinta.db
+.env
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Local deployment and runtime files
+*.log
+*.sqlite
+*.sqlite3
+
+# Android/Gradle generated files
+android-app/.gradle/
+android-app/.gradle-home/
+android-app/build/
+android-app/app/build/
+android-app/local.properties
+android-app/gradle-*/
+
+# Packaged app artifacts
+*.apk
+*.aab
+
+# Large local tool archives
+android-app/gradle-*.zip
+android-app/commandlinetools-*.zip
