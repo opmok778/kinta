@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KINTA Accounts | User Access</title>
+    <title>KINTA Access | Landowner, Tenant And Admin Login</title>
     <meta name="theme-color" content="#1e5937" />
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,7 +21,7 @@
           <img class="brand-logo" src="/assets/kinta-mark.svg" alt="KINTA logo" />
           <span class="brand-copy">
             <strong>KINTA</strong>
-            <small>User Access</small>
+            <small>Access Center</small>
           </span>
         </a>
         <nav class="site-nav">
@@ -34,73 +34,137 @@
 
       <main>
         <section class="page-hero">
-          <p class="eyebrow">Role Accounts</p>
-          <h1>Create or sign in to a KINTA user account.</h1>
+          <p class="eyebrow">Access Center</p>
+          <h1>One cleaner login flow for landowners, tenant farmers, and admins.</h1>
           <p class="hero-description">
-            Landowners, tenant farmers, urban growers, and partners can sign in to make match requests easier and more structured.
+            Pick the role you are using right now, sign in through the right access path, and keep member and admin sessions easy to understand.
           </p>
         </section>
 
         <section class="content-section">
-          <div class="auth-grid">
-            <section class="feature-card">
-              <h3>Demo accounts</h3>
-              <p><strong>Landowner:</strong> landowner@kinta.in / kinta123</p>
-              <p><strong>Tenant:</strong> tenant@kinta.in / kinta123</p>
-              <p><strong>Partner:</strong> partner@kinta.in / kinta123</p>
-              <p>After signing in, detail pages will prefill your match request information automatically.</p>
-            </section>
-
-            <section class="feature-card" id="userSessionCard"></section>
-          </div>
-        </section>
-
-        <section class="content-section">
-          <div class="auth-grid">
-            <section class="panel-card">
-              <p class="eyebrow">Register</p>
-              <h2>Create A Role Account</h2>
-              <form id="userRegisterForm" class="stack-form">
-                <label>Name<input type="text" name="name" required /></label>
-                <label>Email<input type="email" name="email" required /></label>
-                <label>Phone<input type="tel" name="phone" required /></label>
-                <label>City<input type="text" name="city" required /></label>
-                <label>
-                  Role
-                  <select name="role" required>
-                    <option value="">Select role</option>
-                    <option value="Landowner">Landowner</option>
-                    <option value="Tenant Farmer">Tenant Farmer</option>
-                    <option value="Urban Farmer">Urban Farmer</option>
-                    <option value="Agri Partner">Agri Partner</option>
-                  </select>
-                </label>
-                <label>Password<input type="password" name="password" required /></label>
-                <button class="button button-primary" type="submit">Create Account</button>
-                <p class="form-status" id="registerStatus" aria-live="polite"></p>
-              </form>
-            </section>
-
-            <section class="panel-card">
-              <div class="panel-head">
-                <div>
-                  <p class="eyebrow">Sign In</p>
-                  <h2>Use Existing Access</h2>
-                </div>
-                <button class="button button-secondary button-small" id="userLogoutButton" type="button">Logout</button>
+          <div class="access-layout">
+            <aside class="panel-card access-sidebar">
+              <div>
+                <p class="eyebrow">Choose Role</p>
+                <h2>Access that matches the work.</h2>
               </div>
-              <form id="userLoginForm" class="stack-form">
-                <label>Email<input type="email" name="email" value="landowner@kinta.in" required /></label>
-                <label>Password<input type="password" name="password" value="kinta123" required /></label>
-                <button class="button button-primary" type="submit">Sign In</button>
-                <p class="form-status" id="userLoginStatus" aria-live="polite"></p>
-              </form>
-            </section>
+
+              <div class="role-switch" id="roleSwitch" aria-label="Select access role">
+                <button class="role-tab is-active" data-role="landowner" type="button" aria-pressed="true">
+                  <span class="role-tab-kicker">Landowner</span>
+                  <strong>Review land activity and connect with tenant farmers.</strong>
+                  <small>Best for owners who want match-ready profiles and faster outreach.</small>
+                </button>
+                <button class="role-tab" data-role="tenant" type="button" aria-pressed="false">
+                  <span class="role-tab-kicker">Tenant Farmer</span>
+                  <strong>Track lease opportunities and respond with your working profile.</strong>
+                  <small>Best for operators exploring verified land and active match requests.</small>
+                </button>
+                <button class="role-tab" data-role="admin" type="button" aria-pressed="false">
+                  <span class="role-tab-kicker">Admin</span>
+                  <strong>Manage listings, tenant profiles, users, and approvals.</strong>
+                  <small>Best for platform operations and marketplace oversight.</small>
+                </button>
+              </div>
+
+              <div class="session-stack" id="sessionStack" aria-live="polite"></div>
+
+              <section class="access-note">
+                <p class="eyebrow">Demo Access</p>
+                <div class="credential-list" id="demoCredentials"></div>
+                <button class="button button-secondary" id="fillDemoButton" type="button">Use Demo Credentials</button>
+              </section>
+            </aside>
+
+            <div class="auth-workspace">
+              <section class="panel-card">
+                <div class="access-header">
+                  <div>
+                    <p class="eyebrow" id="roleEyebrow">Landowner Login</p>
+                    <h2 id="roleHeadline">Keep landowner access focused and fast.</h2>
+                  </div>
+                  <span class="role-badge" id="roleBadge">Member Access</span>
+                </div>
+                <p class="hero-description" id="roleDescription">
+                  Sign in to prefill match requests, keep your contact details ready, and move from browsing to outreach without the page feeling split up.
+                </p>
+                <div class="access-highlights" id="roleHighlights"></div>
+                <div class="cta-actions">
+                  <a class="button button-secondary" id="primaryAccessLink" href="/marketplace.html">Open Marketplace</a>
+                </div>
+              </section>
+
+              <div class="access-panel-grid">
+                <section class="panel-card">
+                  <div class="panel-head">
+                    <div>
+                      <p class="eyebrow">Sign In</p>
+                      <h2 id="loginHeading">Member Login</h2>
+                    </div>
+                    <button class="button button-secondary button-small" id="activeLogoutButton" type="button">Logout Member</button>
+                  </div>
+                  <p class="field-note" id="loginHelper">
+                    Use your member account to keep match requests and contact details prefilled across the marketplace.
+                  </p>
+                  <form id="accessLoginForm" class="stack-form">
+                    <label>Email<input id="loginEmail" type="email" name="email" autocomplete="username" required /></label>
+                    <label>Password<input id="loginPassword" type="password" name="password" autocomplete="current-password" required /></label>
+                    <button class="button button-primary" id="loginSubmitButton" type="submit">Sign In As Landowner</button>
+                    <p class="form-status" id="loginStatus" aria-live="polite"></p>
+                  </form>
+                </section>
+
+                <section class="panel-card" id="registerPanel">
+                  <div>
+                    <p class="eyebrow">Register</p>
+                    <h2 id="registerHeading">Create a landowner account.</h2>
+                  </div>
+                  <p class="field-note" id="registerHelper">
+                    New member accounts are created here. Admin accounts are handled separately.
+                  </p>
+                  <form id="userRegisterForm" class="stack-form">
+                    <label>Name<input type="text" name="name" autocomplete="name" required /></label>
+                    <label>Email<input type="email" name="email" autocomplete="email" required /></label>
+                    <label>Phone<input type="tel" name="phone" autocomplete="tel" required /></label>
+                    <label>City<input type="text" name="city" autocomplete="address-level2" required /></label>
+                    <label>
+                      Role
+                      <select id="registerRoleField" name="role" required>
+                        <option value="">Select role</option>
+                        <option value="Landowner">Landowner</option>
+                        <option value="Tenant Farmer">Tenant Farmer</option>
+                        <option value="Urban Farmer">Urban Farmer</option>
+                        <option value="Agri Partner">Agri Partner</option>
+                      </select>
+                    </label>
+                    <label>Password<input type="password" name="password" autocomplete="new-password" required /></label>
+                    <button class="button button-primary" type="submit">Create Member Account</button>
+                    <p class="form-status" id="registerStatus" aria-live="polite"></p>
+                  </form>
+                </section>
+
+                <section class="panel-card hidden" id="adminInfoPanel">
+                  <div>
+                    <p class="eyebrow">Admin Provisioning</p>
+                    <h2>Admin accounts are issued separately.</h2>
+                  </div>
+                  <p class="field-note">
+                    Use the credentials provided for staff access. Once signed in, head straight to the operations dashboard for listings, tenant profiles, users, and match approvals.
+                  </p>
+                  <div class="access-highlights">
+                    <article class="fact-card">Separate admin session from member accounts</article>
+                    <article class="fact-card">Approve and track recent match requests</article>
+                    <article class="fact-card">Manage listings and tenant profiles in one place</article>
+                  </div>
+                  <a class="button button-secondary" href="/admin.html">Open Admin Dashboard</a>
+                </section>
+              </div>
+            </div>
           </div>
         </section>
       </main>
       <footer class="site-footer">
-        <p>Role accounts help streamline match requests across landowners, tenant farmers, urban growers, and agri partners.</p>
+        <p>KINTA access is designed to keep landowners, tenant farmers, and platform admins on the right path without a split login experience.</p>
       </footer>
     </div>
 
